@@ -57,7 +57,9 @@ export default function App() {
   return (
     <div className="container">
       <header>
-        <h1>🌿 Horta Inteligente</h1>Q
+        <h2>Venha conferir a</h2>
+        <h1>Horta Inteligente</h1>
+        <h2>🌿</h2>
       </header>
 
       <main>
@@ -78,7 +80,7 @@ export default function App() {
                   <th>Horário</th>
                   <th>Temperatura (°C)</th>
                   <th>Umidade (%)</th>
-                  <th>Solo</th>
+                  <th>Solo (%)</th>
                 </tr>
               </thead>
               <tbody>
@@ -89,9 +91,9 @@ export default function App() {
                     .map((item, i) => (
                       <tr key={i}>
                         <td>{formatarData(item.captured_at)}</td>
-                        <td>{item.temperature ?? "--"}</td>
-                        <td>{item.humidity ?? "--"}</td>
-                        <td>{item.moisture ?? "--"}</td>
+                        <td>{item.temperature ? item.temperature+'°C': "--"}</td>
+                        <td>{item.humidity ? item.humidity+'%': "--"}</td>
+                        <td>{item.moisture ? item.moisture+'%': "--"}</td>
                       </tr>
                     ))
                 ) : (
